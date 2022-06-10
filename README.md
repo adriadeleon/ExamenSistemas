@@ -109,5 +109,96 @@ ___
 
 Una vez tengamos el trabajo realizado lo debemos subir los archivos a **docker hub**, para ello vamos a utilizar la herramienta *compose up*
 
-- NOTA: ¿Que es en Docker el comando `Compose Up`? Es una herramienta para definir y ejecutar aplicaciones Docker multicontenedor que permite simplificar el uso de Docker a partir de archivos YAML, de está forma es mas sencillo crear contendores que se relacionen entre sí, conectarlos, habilitar puertos, volumenes, etc.
+- NOTA: ¿Que es en Docker el comando `Compose Up`? 
+- *Es una herramienta para definir y ejecutar aplicaciones Docker multicontenedor que permite simplificar el uso de Docker a partir de archivos YAML, de está forma es mas sencillo crear contendores que se relacionen entre sí, conectarlos, habilitar puertos, volumenes, etc.*
+
+
+Para ejecutar el Compose Up debemos ir al archivo `.yml` y hacer click derecho y clickar donde pone **Compose up**, como en la siguiente imagen:
+
+![image](https://user-images.githubusercontent.com/98842240/173111037-83758449-31b6-437b-925d-4b34b961f1fa.png)
+
+Una vez le demos tenemos que esperar a que se completen las tres cargas ya que tenemos las tres cargas.
+
+![image](https://user-images.githubusercontent.com/98842240/173111361-3d9dc74e-64eb-46fe-ba0d-1c46b1d8d1dc.png)
+
+Como podemos ver, se ha cargado con exito los tres contenedores. Una vez cargado con exito debemos ir a Docker y visualizar que los contenedores han arrancado con exito, en mi caso ha sido asi:
+
+![image](https://user-images.githubusercontent.com/98842240/173111535-eaf50273-9b9a-46ce-8552-0974caa94da0.png)
+
+Podemos ver que se ha iniciado correctamente.
+
+___
+- Verificación del despliegue.
+___
+
+Lo primero que haremos será ir al navegador y escribiremos `localhost:8081`, con esto visualizaremos el phpMyAdmin. Para poder iniciar sesion debemos ingresar el usuario: *testuser* y la contraseña: *root*.
+
+![image](https://user-images.githubusercontent.com/98842240/173111984-bf018723-2e24-48ca-af33-a21f1860c3ee.png)
+
+Como podemos ver ingresando usuario y contraseña conseguiremos entrar dentro:
+
+![image](https://user-images.githubusercontent.com/98842240/173112084-d053bdaf-54f8-4d68-9842-cc731af8d8af.png)
+
+- NOTA: **Una vez dentro iremos a *testdb1*, luego "USER", "Columnas" y "Nueva". Aquí crearemos una nueva columna llamada "regdit" con un valor/longitud "20".**
+
+Ahora debemos confirmar que podemos loggearnos de forma correcta para ello vamos a la siguiente URL `localhost:8082/LoginWebApp`
+
+- **Login**
+![image](https://user-images.githubusercontent.com/98842240/173112424-286d99e2-2d96-4bfd-8f18-56e92a075ea0.png)
+
+- **Register**
+![image](https://user-images.githubusercontent.com/98842240/173112508-c3f5a5a9-37f8-483f-92ca-74250c5e70de.png)
+
+Ahora debemos registrarnos con un usuario que hayamos creado, en mi caso he creado uno con mi nombre:
+
+![image](https://user-images.githubusercontent.com/98842240/173112621-099d8793-3df2-428f-9cb8-b20306dc720f.png)
+
+Una vez creado nos logeamos y debe aparecer lo siguiente:
+
+![image](https://user-images.githubusercontent.com/98842240/173112718-ae38beaa-3e24-47b3-ad2b-c6f457f12d6d.png)
+
+Para comprobar definitivamente si la cuenta se ha creado bien y se ha guardado en la base de datos vamos a ir al "localhost:8081" y veremos i está la cuenta creada. Como podemos ver está creada.
+![image](https://user-images.githubusercontent.com/98842240/173112822-52966144-59ca-44c7-82e0-e509ce49ba59.png)
+
+En caso de querer parar haremos el mismo proceso que para hacer el `Compose Up`, pero le daremos a `Compose Down` y se paran todos los contenedores.
+
+___
+- Push a **Docker Hub**
+___
+
+Lo primero debemos ir a Docker Hub y logearnos con nuestro usuario.
+
+Para hacer un push desde VisualStudio lo que haremos será ir a la extensión "Docker" e inicias sesión con tu cuenta de docker hub en la parte de "Registries", pones tu usernameID y luego tu constraseña y ya.
+![image](https://user-images.githubusercontent.com/98842240/173113156-b76bd183-4b69-4ced-8d98-8092240005b6.png)
+
+Ahora debemos hacer el `push` a los tres archivos por separado.
+
+- NOTA: por separado porque al subirlo todo de una da error y solo se sube uno.
+
+Para poder ver mis repositorios en docker hub puedes acceder mediante estos enlaces:
+
+Como podemos observar se ha subido todo completamente a Docker Hub
+
+![image](https://user-images.githubusercontent.com/98842240/173114291-ae0f5408-c7b8-4aae-8dc9-3c7cfa8014c7.png)
+
+___
+- Conclusión
+___
+ El trabajo ha sido dificil de realizar ya que quedaban algunas cosas por repasar del código, ayer mi grupo y yo estuvimos hasta las 4am para poder solucionarlo todo y lo conseguimos, asi que estoy contento con el trabajo realizado y con el resultado. 
+ 
+ Buena suerte para tu futuro Máximo, espero que aprendas mucho y sigas adelante!
+
+___
+- tomcat: https://hub.docker.com/repository/docker/adriadeleon/tomcat
+___
+- mysql: https://hub.docker.com/repository/docker/adriadeleon/mysql
+___
+- phpmyadmin: https://hub.docker.com/repository/docker/adriadeleon/phpmyadmin
+___
+
+Adrià Juan de León
+
+
+
+
 
