@@ -1,5 +1,7 @@
 # ExamenSistemas | Adrià Juan de León
 
+![image](https://user-images.githubusercontent.com/98842240/173083398-6debe84f-629a-4931-98bc-fe580a837c9c.png)
+
 ___
 - Introducción.
 ___
