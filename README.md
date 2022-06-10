@@ -64,6 +64,50 @@ Dentro de este archivo hemos añadido las versiones de los archivos, hemos indic
 
 - NOTA: Para poder desplegar nuestro proyecto en el navegador debemos ejecutar en el buscador de **Google** lo siguiente:
 
-````
+`localhost:*puerto*`
 
+EJEMPLO: 
+`localhost:8081 (para visualizar el pphpMyAdmin)`
+
+Una vez logrado poner los puertos debemos crear una carpeta llamada *mysql-dump* y la carpeta *target*. Con estas dos carpetas debemos subir los tres contenedores al mismo tiempo, el comando para ello es:
+
+`docker-compose up -d`
+
+Una vez ejecutado el comando se crearán las imagenes vacías menos la de la carpeta **target**, esta crea una carpeta llamada *LoginWebApp.war* pero nosotros solo necesitamos el archivo **.war**.
+
+Dentro de la carpeta *mysql-dump* tenemos que tener el archivo `USER.sql` que lo tenemos descargado despues de bajarnos todo el repositorio del profesor.
+
+El archivo `USER.sql` debe contener lo siguiente:
+
+![image](https://user-images.githubusercontent.com/98842240/173109243-88fbed0d-b92f-4e7c-8ca7-089bdd479175.png)
+
+A continuación, dentro de la carpeta *target* tenemos que tener el archivo `LoginWebApp.war` junto a la carpeta `LoginWebApp` donde tendremos todo el codigo.
+
+- NOTA: he creado un back up del archivo *.war* llamado `LoginWebApp.war.bck`.
+
+___
+- Creación de la imagen de *dockerfile*
+___
+
+Para crear la imagen debemos ir al archivo **dockerfile** creado con anterioridad y debemos darle click derecho al código y darle a `build image` como en la captura siguiente:
+
+![image](https://user-images.githubusercontent.com/98842240/173109910-5b9c728c-2f87-4daf-99fb-0a7dbc19b55f.png)
+
+Una vez le demos se nos ejecutará esta ventana:
+
+![image](https://user-images.githubusercontent.com/98842240/173110106-36dec83b-52db-472c-bbb3-b7d054db0ea5.png)
+
+Debemos escribir el nombre de la imagen en minuscula y darle a *enter*.
+
+![image](https://user-images.githubusercontent.com/98842240/173110277-f6f0e01c-139a-4ab0-88ed-2de369d9e82c.png)
+
+Una vez le hayamos dado a enter solo tenemos que esperar a que se complete la imagen con el nombre que hemos proporcionado.
+
+___
+- Explicación de como hacer un **Compose Up**.
+___
+
+Una vez tengamos el trabajo realizado lo debemos subir los archivos a **docker hub**, para ello vamos a utilizar la herramienta *compose up*
+
+- NOTA: ¿Que es en Docker el comando `Compose Up`? Es una herramienta para definir y ejecutar aplicaciones Docker multicontenedor que permite simplificar el uso de Docker a partir de archivos YAML, de está forma es mas sencillo crear contendores que se relacionen entre sí, conectarlos, habilitar puertos, volumenes, etc.
 
