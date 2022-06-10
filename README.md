@@ -189,11 +189,11 @@ ___
  Buena suerte para tu futuro Máximo, espero que aprendas mucho y sigas adelante!
 
 ___
-- tomcat: https://hub.docker.com/repository/docker/adriadeleon/tomcat
+- tomcat: https://hub.docker.com/r/adriadeleon/tomcat
 ___
-- mysql: https://hub.docker.com/repository/docker/adriadeleon/mysql
+- mysql: https://hub.docker.com/r/adriadeleon/mysql
 ___
-- phpmyadmin: https://hub.docker.com/repository/docker/adriadeleon/phpmyadmin
+- phpmyadmin: https://hub.docker.com/r/adriadeleon/phpmyadmin
 ___
 
 Adrià Juan de León
