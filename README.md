@@ -45,14 +45,25 @@ Cuando tengamos todo listo, debemos crear un archivo llamado **Dockerfile** (est
 
 Después de haber creado el **Dockerfile**, debemos añadir la siguiente información dentro del archivo:
 
-``
-FROM tomcat:latest
+![image](https://user-images.githubusercontent.com/98842240/173105765-8857713f-45b5-4b40-a25f-b9c647b55d26.png)
 
-LABEL maintainer="Adria Juan de Leon"
+- ANOTACIÓN: En la imagen anterior, la línea dónde pone **COPY** significa que copiará el archivo llamado **LoginWebApp**, este archivo lo tenemos alojado en la carpeta **"target"**, cuando acabe esto, lo copiará en la siguiente ubicación: */usr/local/tomcat/webapps/*.
 
-COPY ./target/LoginWebApp.war /usr/local/tomcat/webapps/
+___
+- Creación del archivo **docker-compose.yml**.
+___
+Ahora vamos a ver como crear el archivo *docker-compose.yml*.
 
-EXPOSE 8080
+Dentro de este podemos ver la información de cada contenedor que tenemos, ya sea *mysql*, *phpMyAdmin* o *tomcat*.
 
-CMD ["catalina.sh", "run"]
-``
+Este archivo tiene que ser creado igual que el **Dockerfile**, pero en este caso poner de nombre *docker-compose.yml* dentrp del **.yml** hemos añadido lo siguiente:
+
+![image](https://user-images.githubusercontent.com/98842240/173107097-74c41404-4601-4bc7-bfd3-c490ed68901e.png)
+
+Dentro de este archivo hemos añadido las versiones de los archivos, hemos indicado los puertos por donde ataca el archivo y donde queremos que se efectúe el contenedor *(ataca = efectúa su inicialización)*. En mi caso, el puerto de la base de datos es el puerto = `3306` que es el puerto por defecto de *MySQL*. Para *phpMyAdmin* he añadido el puerto = `8081` y para la *web* he añadido el puerto = `8082`.
+
+- NOTA: Para poder desplegar nuestro proyecto en el navegador debemos ejecutar en el buscador de **Google** lo siguiente:
+
+````
+
+
